@@ -24,6 +24,11 @@ function additionFunction(){
     echo "The sum of $firstInput and $secondInput is :"
     expr $firstInput + $secondInput
 }
+
+function subtractionFunction(){
+    echo "The difference between $firstInput and $secondInput is :"
+    expr $firstInput - $secondInput
+}
 # --------------------------------------------------------------------------------
 
 
@@ -54,6 +59,16 @@ while true; do
 
         # Calling the function additionFunction & setting firstInput & secondInput as parameters.
         additionFunction $firstInput $secondInput
+      ;;
+
+      "S" | "s" | "2" | "SUBTRACT" | "subtract" | "Subtract")
+        echo "Enter the first number : "
+        read firstInput
+        echo "Enter the second number : "
+        read secondInput
+
+        # Calling the function subtractionFunction & setting firstInput & secondInput as parameters.
+        subtractionFunction $firstInput $secondInput
       ;;
   esac
 done
