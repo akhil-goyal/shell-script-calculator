@@ -1,11 +1,19 @@
-#! /usr/bin/env bash
+# ---------------------------- WELCOME MESSAGE -----------------------------------
 
-# When the program is first loaded, display a greeting to the user.
-# Then, display a menu that outlines the possible operations:
-  # Add
-  # Subtract
-  # Exit
-# Then, capture the user selection.
-# If the selection matches a supported operation, execute the operation.
-# If the selection does not match a support operation, display an error message.
-# When the operation is complete, redisplay the menu.
+# USER is being used to fetch the system user name.
+# (date+"%H") is being used to fetch the current hour.
+
+currentHour=$(date +"%H")
+
+if [ $currentHour -ge 0 -a $currentHour -lt 12 ]
+  then
+    greetingMessage="Good morning, ${USER}! Welcome to the calculator program."
+elif [ $currentHour -ge 12 -a $currentHour -lt 18 ] 
+  then
+    greetingMessage="Good afternoon, ${USER}! Welcome to the calculator program."
+else 
+    greetingMessage="Good evening, ${USER}! Welcome to the calculator program."
+fi
+
+echo $greetingMessage
+# --------------------------------------------------------------------------------
