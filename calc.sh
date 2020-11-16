@@ -34,6 +34,11 @@ function multiplicationFunction(){
     echo "The product of $firstInput and $secondInput is :"
     expr $firstInput "*" $secondInput
 }
+
+function divisionFunction(){
+    echo "The division of $firstInput and $secondInput gives :"
+    expr $firstInput / $secondInput
+}
 # --------------------------------------------------------------------------------
 
 
@@ -84,6 +89,16 @@ while true; do
 
         # Calling the function multiplicationFunction & setting firstInput & secondInput as parameters.
         multiplicationFunction $firstInput $secondInput
+      ;;
+
+      "D" | "d" | "4" | "DIVIDE" | "divide" | "Divide")
+        echo "Enter the first number : "
+        read firstInput
+        echo "Enter the second number : "
+        read secondInput
+
+        # Calling the function divisionFunction & setting firstInput & secondInput as parameters.
+        divisionFunction $firstInput $secondInput
       ;;
   esac
 done
