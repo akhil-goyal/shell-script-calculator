@@ -39,6 +39,11 @@ function divisionFunction(){
     echo "The division of $firstInput and $secondInput gives :"
     expr $firstInput / $secondInput
 }
+
+function exitFunction(){
+    echo "Sorry to see you go. See you soon!"
+    exit 0
+}
 # --------------------------------------------------------------------------------
 
 
@@ -99,6 +104,12 @@ while true; do
 
         # Calling the function divisionFunction & setting firstInput & secondInput as parameters.
         divisionFunction $firstInput $secondInput
+      ;;
+
+      "E" | "e" | "5" | "EXIT" | "exit" | "Exit")
+
+        # Calling the function exitFunction.
+        exitFunction
       ;;
   esac
 done
