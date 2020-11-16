@@ -29,6 +29,11 @@ function subtractionFunction(){
     echo "The difference between $firstInput and $secondInput is :"
     expr $firstInput - $secondInput
 }
+
+function multiplicationFunction(){
+    echo "The product of $firstInput and $secondInput is :"
+    expr $firstInput "*" $secondInput
+}
 # --------------------------------------------------------------------------------
 
 
@@ -69,6 +74,16 @@ while true; do
 
         # Calling the function subtractionFunction & setting firstInput & secondInput as parameters.
         subtractionFunction $firstInput $secondInput
+      ;;
+
+      "M" | "m" | "3" | "MULTIPLY" | "multiply" | "Multiply")
+        echo "Enter the first number : "
+        read firstInput
+        echo "Enter the second number : "
+        read secondInput
+
+        # Calling the function multiplicationFunction & setting firstInput & secondInput as parameters.
+        multiplicationFunction $firstInput $secondInput
       ;;
   esac
 done
