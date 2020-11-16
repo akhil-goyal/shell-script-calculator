@@ -44,6 +44,10 @@ function exitFunction(){
     echo "Sorry to see you go. See you soon!"
     exit 0
 }
+
+function errorHandler(){
+    echo "$userInput is an invalid input. Please try again!"
+}
 # --------------------------------------------------------------------------------
 
 
@@ -110,6 +114,14 @@ while true; do
 
         # Calling the function exitFunction.
         exitFunction
+      ;;
+
+      # Asterisk (*) sign denotes any other value apart from those specified
+      # in the cases. 
+      *)
+
+        # Calling the function errorHandler & setting userInput as parameter.
+        errorHandler $userInput
       ;;
   esac
 done
