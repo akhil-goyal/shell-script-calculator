@@ -20,24 +20,29 @@ echo $greetingMessage
 
 
 # ------------------------------- FUNCTIONS --------------------------------------
+
+# Using 'bc' as an arbitrary precision calculator language.
+# It can help in dealing with decimal numbers as shell scripting,
+# by default, deals with integers only.
+
 function additionFunction(){
     echo "The sum of $firstInput and $secondInput is :"
-    expr $firstInput + $secondInput
+    expr "$firstInput + $secondInput" | bc -l
 }
 
 function subtractionFunction(){
     echo "The difference between $firstInput and $secondInput is :"
-    expr $firstInput - $secondInput
+    expr "$firstInput - $secondInput" | bc -l
 }
 
 function multiplicationFunction(){
     echo "The product of $firstInput and $secondInput is :"
-    expr $firstInput "*" $secondInput
+    expr "$firstInput * $secondInput" | bc -l
 }
 
 function divisionFunction(){
-    echo "The division of $firstInput and $secondInput gives :"
-    expr $firstInput / $secondInput
+    echo "The division of $firstInput by $secondInput gives :"
+    expr "$firstInput / $secondInput" | bc -l
 }
 
 function exitFunction(){
